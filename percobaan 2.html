@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AREK AI MURID JATIM 2025 MBOIS</title>
+
+  <style>
+    /* === RESET === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #0b0c10;
+      overflow: hidden;
+    }
+
+    /* === HEADER === */
+    header {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* === SLIDESHOW === */
+    .slideshow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      filter: brightness(70%) saturate(120%);
+    }
+
+    .slideshow img.active {
+      opacity: 1;
+    }
+
+    /* === OVERLAY GRADIENT === */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 0, 50, 0.6),
+        rgba(80, 0, 130, 0.6)
+      );
+      mix-blend-mode: overlay;
+      z-index: 1;
+    }
+
+    /* === TEXT (CENTER) === */
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #00f5ff, #ff00e6, #aaff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      text-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      letter-spacing: 2px;
+    }
+
+    .hero-text p {
+      margin-top: 1rem;
+      color: #ccc;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-text p {
+        font-size: 1rem;
+      }
+    }
+
+    /* === ANIMASI GLOW === */
+    .hero-text h1 {
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 15px #00eaff, 0 0 30px #ff00e6;
+      }
+      to {
+        text-shadow: 0 0 25px #aaff00, 0 0 40px #00f5ff;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="slideshow">
+      <!-- Gambar bertema AI -->
+      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80" class="active" alt="AI Image 1">
+      <img src="https://images.unsplash.com/photo-1682687220063-4742bd7fd6a0?auto=format&fit=crop&w=1600&q=80" alt="AI Image 2">
+      <img src="https://images.unsplash.com/photo-1627545133349-575da3bfbf26?auto=format&fit=crop&w=1600&q=80" alt="AI Image 3">
+      <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1600&q=80" alt="AI Image 4">
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="hero-text">
+      <h1>AREK AI MURID JATIM 2025 MBOIS</h1>
+      <p>Generasi Muda Inovatif, Kreatif, dan Siap Bersaing di Dunia Artificial Intelligence</p>
+    </div>
+  </header>
+
+  <script>
+    // === SLIDESHOW SCRIPT ===
+    const slides = document.querySelectorAll(".slideshow img");
+    let index = 0;
+
+    function showNextSlide() {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }
+
+    setInterval(showNextSlide, 5000); // ganti gambar setiap 5 detik
+  </script>
+</body>
+</html>
